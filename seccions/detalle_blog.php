@@ -5,7 +5,7 @@
 	$post = null;
 	foreach ($blogs as $b) { if ($b->getSlug() === $slug) { $post = $b; break; } }
 ?>
-<article class="mt-8">
+<article class="mt-8 section-retrowave">
 	<header class="mb-6">
 		<h1 class="text-3xl md:text-4xl font-extrabold uppercase tracking-wide text-black"><?= $post ? htmlspecialchars($post->getTitulo()) : 'Artículo no encontrado'; ?></h1>
 		<?php if ($post): ?>

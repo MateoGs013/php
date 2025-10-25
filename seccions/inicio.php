@@ -8,42 +8,42 @@
 	$duendesDestacados = array_slice($duendes, 0, 3); // Primeros 3 duendes
 ?>
 
-<div class="page-container retro-bg retro-grid">
-	<!-- Hero Section Arcade -->
-	<section class="hero-arcade">
+<div class="retrowave-universe">
+	<!-- Hero Section Retrowave -->
+	<section class="retrowave-header">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
 			<div class="text-center">
 				<!-- Título principal con efectos -->
-				<h1 class="hero-title pixel-font text-glow mb-6">
-					MYSTIC ARCADE SHOP
+				<h1 class="retro-title pixel-font text-glow mb-6">
+					PIXEL GNOMES
 				</h1>
 				
 				<!-- Subtítulo -->
-				<p class="hero-subtitle pixel-font max-w-3xl mx-auto mb-8">
-					◄◄◄ DESCUBRE DUENDES MÁGICOS CON PODER RETRO ►►►
+				<p class="subtitle-text retro-font max-w-3xl mx-auto mb-8">
+					◄◄◄ DESCUBRE DUENDES MÁGICOS EN TONOS PASTEL ►►►
 				</p>
 				
 				<!-- Call to action buttons -->
 				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-					<a href="?seccion=productos" class="btn-arc primary pixel-font pixel-md px-8 py-4">
+					<a href="?seccion=productos" class="retro-btn btn-purchase pixel-font pixel-md px-8 py-4">
 						🎮 EXPLORAR TIENDA
 					</a>
-					<a href="?seccion=catalogo" class="btn-arc secondary pixel-font pixel-md px-8 py-4">
+					<a href="?seccion=catalogo" class="retro-btn btn-preview pixel-font pixel-md px-8 py-4">
 						📚 VER CATÁLOGO
 					</a>
 				</div>
 
-				<!-- Stats arcade -->
+				<!-- Stats retrowave -->
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-					<div class="form-arcade text-center">
+					<div class="form-retrowave text-center">
 						<div class="pixel-font pixel-xl text-neon-pink text-glow mb-2">20+</div>
 						<div class="pixel-font pixel-sm text-neon-cyan">DUENDES ÚNICOS</div>
 					</div>
-					<div class="form-arcade text-center">
+					<div class="form-retrowave text-center">
 						<div class="pixel-font pixel-xl text-neon-green text-glow mb-2">100%</div>
 						<div class="pixel-font pixel-sm text-neon-yellow">MAGIA GARANTIZADA</div>
 					</div>
-					<div class="form-arcade text-center">
+					<div class="form-retrowave text-center">
 						<div class="pixel-font pixel-xl text-neon-cyan text-glow mb-2">24/7</div>
 						<div class="pixel-font pixel-sm text-neon-pink">SOPORTE MÍSTICO</div>
 					</div>
@@ -59,7 +59,7 @@
 	</section>
 
 	<!-- Featured Products Section -->
-	<section class="section-arcade">
+			<section class="section-retrowave">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div class="text-center mb-12">
 				<h2 class="section-title pixel-font pixel-lg">
@@ -72,7 +72,7 @@
 
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<?php foreach ($duendesDestacados as $duende): ?>
-					<div class="card">
+					<div class="retro-capsule">
 						<div class="card__content">
 							<div class="flex items-center justify-between gap-2 mb-3">
 								<span class="badge pixel-font pixel-xs"><?= strtoupper($duende->getRareza()) ?></span>
@@ -97,10 +97,10 @@
 							
 							<div class="flex gap-2 justify-center">
 								<a href="?seccion=detalle_producto&id=<?= $duende->getId() ?>" 
-								   class="btn-arc primary pixel-font pixel-xs">
+								   class="retro-btn btn-preview pixel-font pixel-xs">
 									👁️ VER
 								</a>
-								<button class="btn-arc secondary pixel-font pixel-xs">
+								<button class="retro-btn btn-purchase pixel-font pixel-xs">
 									+ AGREGAR
 								</button>
 							</div>
@@ -110,7 +110,7 @@
 			</div>
 			
 			<div class="text-center mt-12">
-				<a href="?seccion=productos" class="btn-arc primary pixel-font pixel-md px-8 py-4">
+				<a href="?seccion=productos" class="retro-btn primary pixel-font pixel-md px-8 py-4">
 					🎯 VER TODOS LOS DUENDES
 				</a>
 			</div>
@@ -118,7 +118,7 @@
 	</section>
 
 	<!-- Features Section -->
-	<section class="section-arcade bg-dark-arcade">
+	<section class="section-retrowave bg-retro-dark">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div class="text-center mb-12">
 				<h2 class="section-title pixel-font pixel-lg">
@@ -127,7 +127,7 @@
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-				<div class="form-arcade text-center h-full">
+				<div class="form-retrowave text-center h-full">
 					<div class="text-4xl mb-4">🎮</div>
 					<h3 class="pixel-font pixel-md text-neon-cyan mb-3">ESTÉTICA RETRO</h3>
 					<p class="pixel-font pixel-xs text-white">
@@ -135,7 +135,7 @@
 					</p>
 				</div>
 				
-				<div class="form-arcade text-center h-full">
+				<div class="form-retrowave text-center h-full">
 					<div class="text-4xl mb-4">✨</div>
 					<h3 class="pixel-font pixel-md text-neon-green mb-3">MAGIA REAL</h3>
 					<p class="pixel-font pixel-xs text-white">
@@ -143,7 +143,7 @@
 					</p>
 				</div>
 				
-				<div class="form-arcade text-center h-full">
+				<div class="form-retrowave text-center h-full">
 					<div class="text-4xl mb-4">🚚</div>
 					<h3 class="pixel-font pixel-md text-neon-yellow mb-3">ENVÍO MÁGICO</h3>
 					<p class="pixel-font pixel-xs text-white">
@@ -151,7 +151,7 @@
 					</p>
 				</div>
 				
-				<div class="form-arcade text-center h-full">
+				<div class="form-retrowave text-center h-full">
 					<div class="text-4xl mb-4">🛡️</div>
 					<h3 class="pixel-font pixel-md text-neon-pink mb-3">GARANTÍA TOTAL</h3>
 					<p class="pixel-font pixel-xs text-white">
@@ -163,11 +163,11 @@
 	</section>
 
 	<!-- Newsletter Section -->
-	<section class="section-arcade">
+	<section class="section-retrowave">
 		<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-			<div class="form-arcade text-center">
-				<h2 class="pixel-font pixel-lg text-neon-cyan text-glow mb-4">
-					ÚNETE AL ARCADE CLUB
+			<div class="form-retrowave text-center">
+				<h2 class="pixel-font pixel-lg text-retro-gradient text-glow mb-4">
+					ÚNETE AL RETROWAVE CLUB
 				</h2>
 				<p class="pixel-font pixel-sm text-white mb-6">
 					RECIBE NOTIFICACIONES SOBRE NUEVOS DUENDES Y OFERTAS ESPECIALES
@@ -175,9 +175,9 @@
 				
 				<div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
 					<input type="email" 
-						   placeholder="TU EMAIL MÁGICO..." 
+						   placeholder="TU EMAIL..." 
 						   class="input-arcade flex-1">
-					<button class="btn-arc primary pixel-font pixel-sm px-6">
+					<button class="retro-btn btn-purchase pixel-font pixel-sm px-6">
 						🔔 SUSCRIBIR
 					</button>
 				</div>

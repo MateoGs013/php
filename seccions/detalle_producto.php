@@ -21,8 +21,8 @@
 <div class="page-container retro-bg retro-grid">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
 		
-		<!-- Breadcrumb -->
-		<div class="breadcrumb-arcade pixel-font pixel-xs mb-8">
+	<!-- Breadcrumb -->
+	<div class="breadcrumb-retrowave pixel-font pixel-xs mb-8">
 			<a href="?seccion=inicio">INICIO</a>
 			<span class="breadcrumb-separator">▶</span>
 			<a href="?seccion=catalogo">CATÁLOGO</a>
@@ -34,11 +34,11 @@
 
 		<?php if ($duende): ?>
 			<!-- Producto Principal -->
-			<div class="grid lg:grid-cols-2 gap-12 mb-16">
+		<div class="grid lg:grid-cols-2 gap-12 mb-16">
 				
 				<!-- Galería de Imagen -->
 				<div class="space-y-6">
-					<div class="form-arcade aspect-square">
+					<div class="form-retrowave aspect-square">
 						<img src="<?= htmlspecialchars($duende->getImagenUrl()); ?>" 
 							 alt="<?= htmlspecialchars($duende->getNombre()); ?>" 
 							 class="w-full h-full object-contain border-4 border-neon-cyan rounded-lg duende-img" 
@@ -71,7 +71,7 @@
 							<?php if ($duende->isDisponible()): ?>
 								<span class="chip pixel-font pixel-sm">✅ DISPONIBLE</span>
 							<?php else: ?>
-								<span class="alert-arcade alert-error pixel-font pixel-sm inline-block">❌ AGOTADO</span>
+								<span class="alert-retrowave alert-error pixel-font pixel-sm inline-block">❌ AGOTADO</span>
 							<?php endif; ?>
 						</div>
 						
@@ -94,7 +94,7 @@
 					</div>
 
 					<!-- Descripción -->
-					<div class="form-arcade">
+					<div class="form-retrowave">
 						<h3 class="pixel-font pixel-md text-neon-green mb-4">📜 DESCRIPCIÓN</h3>
 						<p class="pixel-font pixel-sm text-white leading-relaxed">
 							<?= nl2br(htmlspecialchars($duende->getDescripcion())) ?>
@@ -102,7 +102,7 @@
 					</div>
 
 					<!-- Estadísticas -->
-					<div class="form-arcade">
+					<div class="form-retrowave">
 						<h3 class="pixel-font pixel-md text-neon-green mb-4">⚡ ESTADÍSTICAS</h3>
 						<div class="grid grid-cols-2 gap-4">
 							<div class="bg-dark-arcade border-2 border-neon-cyan rounded p-3">
@@ -125,7 +125,7 @@
 					</div>
 
 					<!-- Información detallada -->
-					<div class="form-arcade">
+					<div class="form-retrowave">
 						<h3 class="pixel-font pixel-md text-neon-green mb-4">🔮 INFORMACIÓN MÁGICA</h3>
 						<div class="space-y-3">
 							<div class="flex justify-between">
@@ -148,7 +148,7 @@
 					</div>
 
 					<!-- Efectos mágicos -->
-					<div class="form-arcade">
+					<div class="form-retrowave">
 						<h3 class="pixel-font pixel-md text-neon-green mb-4">✨ EFECTO MÁGICO</h3>
 						<div class="bg-dark-arcade border-2 border-neon-purple rounded-lg p-4">
 							<p class="pixel-font pixel-sm text-neon-purple text-glow text-center">
@@ -159,7 +159,7 @@
 
 					<!-- Advertencias -->
 					<?php if ($duende->getAdvertencias()): ?>
-						<div class="alert-arcade alert-warning">
+						<div class="alert-retrowave alert-warning">
 							<div class="pixel-font pixel-xs">
 								⚠️ ADVERTENCIA: <?= strtoupper(htmlspecialchars($duende->getAdvertencias())) ?>
 							</div>
@@ -174,16 +174,16 @@
 								<input type="hidden" name="accion" value="agregar"/>
 								
 								<div class="flex gap-3">
-									<button type="submit" class="btn-arc primary pixel-font pixel-md flex-1 py-4">
+									<button type="submit" class="retro-btn primary pixel-font pixel-md flex-1 py-4">
 										🛒 ADOPTAR DUENDE
 									</button>
-									<button type="button" class="btn-arc secondary pixel-font pixel-md px-6 py-4">
+									<button type="button" class="retro-btn secondary pixel-font pixel-md px-6 py-4">
 										❤️ FAVORITO
 									</button>
 								</div>
 							</form>
 						<?php else: ?>
-							<div class="alert-arcade alert-error text-center">
+							<div class="alert-retrowave alert-error text-center">
 								<div class="pixel-font pixel-md">
 									😔 DUENDE NO DISPONIBLE
 								</div>
@@ -191,10 +191,10 @@
 						<?php endif; ?>
 						
 						<div class="flex gap-3">
-							<button class="btn-arc secondary pixel-font pixel-sm flex-1">
+							<button class="retro-btn secondary pixel-font pixel-sm flex-1">
 								📤 COMPARTIR
 							</button>
-							<button class="btn-arc secondary pixel-font pixel-sm flex-1">
+							<button class="retro-btn secondary pixel-font pixel-sm flex-1">
 								📋 COMPARAR
 							</button>
 						</div>
@@ -204,7 +204,7 @@
 
 			<!-- Duendes Relacionados -->
 			<?php if (count($duendesRelacionados) > 0): ?>
-				<div class="section-arcade">
+				<div class="section-retrowave">
 					<h2 class="section-title pixel-font pixel-lg mb-8">
 						DUENDES RELACIONADOS
 					</h2>
@@ -235,7 +235,7 @@
 									
 									<div class="flex gap-2 justify-center">
 										<a href="?seccion=detalle_producto&id=<?= $relacionado->getId() ?>" 
-										   class="btn-arc primary pixel-font pixel-xs">
+										   class="retro-btn primary pixel-font pixel-xs">
 											👁️ VER
 										</a>
 									</div>
@@ -249,7 +249,7 @@
 		<?php else: ?>
 			<!-- Producto no encontrado -->
 			<div class="text-center py-20">
-				<div class="form-arcade max-w-md mx-auto">
+				<div class="form-retrowave max-w-md mx-auto">
 					<div class="text-8xl mb-6">😵</div>
 					<h1 class="pixel-font pixel-xl text-neon-cyan text-glow mb-4">
 						DUENDE NO ENCONTRADO
@@ -257,7 +257,7 @@
 					<p class="pixel-font pixel-md text-white mb-8">
 						EL DUENDE QUE BUSCAS SE HA DESVANECIDO EN LA NIEBLA...
 					</p>
-					<a href="?seccion=catalogo" class="btn-arc primary pixel-font pixel-md">
+					<a href="?seccion=catalogo" class="retro-btn primary pixel-font pixel-md">
 						🔍 EXPLORAR CATÁLOGO
 					</a>
 				</div>
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	// Animación de estadísticas al scroll
-	const stats = document.querySelectorAll('.form-arcade .grid > div');
+	const stats = document.querySelectorAll('.form-retrowave .grid > div');
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {

@@ -3,8 +3,8 @@ require_once 'clases/Duendes.php';
 $duendes = Duendes::cargarDuendesDesdeJSON();
 ?>
 
-<!-- PIXEL GNOMES ARCADE - Pantalla Principal -->
-<div class="arcade-universe">
+<!-- RETROWAVE 80s GNOMES - Pantalla Principal -->
+<div class="retrowave-universe">
     <!-- Partículas flotantes de fondo -->
     <div class="floating-particles">
         <div class="particle pixel-1"></div>
@@ -15,16 +15,16 @@ $duendes = Duendes::cargarDuendesDesdeJSON();
     </div>
 
     <!-- Header con perspectiva 3D -->
-    <div class="arcade-header">
+    <div class="retrowave-header">
         <div class="header-3d-container">
-            <h1 class="mega-title pixel-font">
-                <span class="title-layer-1">PIXEL</span>
+            <h1 class="retro-title pixel-font">
+                <span class="title-layer-1">RETRO</span>
                 <span class="title-layer-2">GNOMES</span>
-                <span class="title-layer-3">ARCADE</span>
+                <span class="title-layer-3">80s</span>
             </h1>
             <div class="subtitle-container">
                 <div class="pixel-font subtitle-text">
-                    ⚡ SELECCIONA TU COMPAÑERO DIGITAL ⚡
+                    ⚡ SELECCIONA TU COMPAÑERO VINTAGE ⚡
                 </div>
                 <div class="scan-line"></div>
             </div>
@@ -32,10 +32,10 @@ $duendes = Duendes::cargarDuendesDesdeJSON();
     </div>
 
     <!-- Filtros y controles -->
-    <div class="arcade-controls">
+    <div class="retrowave-controls">
         <div class="control-panel">
             <button class="filter-btn active pixel-font" data-filter="all">
-                📱 TODOS
+                🌈 TODOS
             </button>
             <button class="filter-btn pixel-font" data-filter="legendary">
                 👑 LEGENDARIOS
@@ -44,7 +44,7 @@ $duendes = Duendes::cargarDuendesDesdeJSON();
                 💎 RAROS
             </button>
             <button class="filter-btn pixel-font" data-filter="common">
-                🔮 COMUNES
+                🌟 COMUNES
             </button>
         </div>
         <div class="score-display pixel-font">
@@ -53,9 +53,9 @@ $duendes = Duendes::cargarDuendesDesdeJSON();
     </div>
 
     <!-- Grid de productos con perspectiva isométrica -->
-    <div class="isometric-showcase">
+    <div class="retrowave-showcase">
         <?php foreach ($duendes as $index => $d): ?>
-            <div class="gnome-capsule" 
+            <div class="retro-capsule" 
                  data-rarity="<?= strtolower($d->getRareza()) ?>"
                  style="--delay: <?= $index * 0.1 ?>s">
                 
@@ -83,7 +83,7 @@ $duendes = Duendes::cargarDuendesDesdeJSON();
                         
                         <!-- Información del personaje -->
                         <div class="character-info">
-                            <h3 class="character-name pixel-font">
+                            <h3 class="character-name retro-font">
                                 <?= strtoupper($d->getNombre()) ?>
                             </h3>
                             
@@ -116,14 +116,14 @@ $duendes = Duendes::cargarDuendesDesdeJSON();
 
                     <!-- Botones de acción con efectos -->
                     <div class="action-buttons">
-                        <button class="arcade-btn btn-preview" 
+                        <button class="retro-btn btn-preview" 
                                 onclick="previewGnome(<?= $d->getId() ?>)"
                                 data-tooltip="Vista previa">
                             <span class="btn-icon">👁️</span>
                             <span class="btn-text pixel-font">PREVIEW</span>
                         </button>
                         
-                        <button class="arcade-btn btn-purchase <?= !$d->isDisponible() ? 'disabled' : '' ?>" 
+                        <button class="retro-btn btn-purchase <?= !$d->isDisponible() ? 'disabled' : '' ?>" 
                                 onclick="<?= $d->isDisponible() ? 'purchaseGnome(' . $d->getId() . ')' : 'showSoldOut()' ?>"
                                 data-tooltip="<?= $d->isDisponible() ? 'Agregar al carrito' : 'Agotado' ?>">
                             <span class="btn-icon"><?= $d->isDisponible() ? '🛒' : '❌' ?></span>
@@ -162,23 +162,23 @@ $duendes = Duendes::cargarDuendesDesdeJSON();
         </div>
     </div>
 
-    <!-- Footer arcade -->
-    <div class="arcade-footer">
-        <div class="footer-display pixel-font">
-            <div class="footer-line">
+    <!-- Footer retrowave -->
+    <div class="retrowave-footer">
+        <div class="footer-display">
+            <div class="footer-line pixel-font">
                 ◄◄◄ PRESS START TO CONTINUE ►►►
             </div>
-            <div class="footer-line">
-                🎮 PIXEL GNOMES ARCADE © 2025 🎮
+            <div class="footer-line retro-font">
+                🎮 RETRO GNOMES 80s © 2025 🎮
             </div>
         </div>
     </div>
 </div>
 
 <script>
-// ===== ARCADE GNOMES INTERACTIVE SYSTEM =====
+// ===== RETROWAVE 80s GNOMES INTERACTIVE SYSTEM =====
 
-class ArcadeGnomes {
+class RetrowaveGnomes {
     constructor() {
         this.gnomes = <?= json_encode($duendes) ?>;
         this.filteredGnomes = [...this.gnomes];
@@ -189,7 +189,7 @@ class ArcadeGnomes {
     init() {
         this.setupEventListeners();
         this.updateGnomeCount();
-        this.initializeArcadeEffects();
+        this.initializeRetrowaveEffects();
     }
 
     setupEventListeners() {
@@ -206,9 +206,9 @@ class ArcadeGnomes {
         });
 
         // Efectos de sonido simulados
-        document.querySelectorAll('.gnome-capsule').forEach(capsule => {
-            capsule.addEventListener('mouseenter', () => this.playHoverSound());
-            capsule.addEventListener('click', () => this.playClickSound());
+        document.querySelectorAll('.retro-capsule').forEach(capsule => {
+            capsule.addEventListener('mouseenter', () => this.playRetroHoverSound());
+            capsule.addEventListener('click', () => this.playRetroClickSound());
         });
 
         // Teclas de navegación
@@ -232,7 +232,7 @@ class ArcadeGnomes {
     }
 
     applyFilter(filter) {
-        const capsules = document.querySelectorAll('.gnome-capsule');
+        const capsules = document.querySelectorAll('.retro-capsule');
         
         capsules.forEach((capsule, index) => {
             const rarity = capsule.dataset.rarity;
@@ -255,12 +255,12 @@ class ArcadeGnomes {
 
             if (shouldShow) {
                 capsule.style.display = 'block';
-                capsule.style.animation = `appearAnimation 0.6s ease-out ${index * 0.1}s both`;
+                capsule.style.animation = `retroAppear 0.8s ease-out ${index * 0.1}s both`;
             } else {
                 capsule.style.animation = 'none';
                 setTimeout(() => {
                     capsule.style.display = 'none';
-                }, 300);
+                }, 400);
             }
         });
 
@@ -268,86 +268,116 @@ class ArcadeGnomes {
     }
 
     updateGnomeCount() {
-        const visibleCapsules = document.querySelectorAll('.gnome-capsule[style*="display: block"], .gnome-capsule:not([style*="display: none"])').length;
+        const visibleCapsules = document.querySelectorAll('.retro-capsule[style*="display: block"], .retro-capsule:not([style*="display: none"])').length;
         const countElement = document.getElementById('gnome-count');
         if (countElement) {
             countElement.textContent = visibleCapsules;
-            countElement.style.animation = 'glowPulse 0.5s ease-in-out';
+            countElement.style.animation = 'retroPulse 0.6s ease-in-out';
         }
     }
 
     animateFilterChange() {
-        const showcase = document.querySelector('.isometric-showcase');
-        showcase.style.transform = 'perspective(1200px) rotateX(25deg) scale(0.95)';
+        const showcase = document.querySelector('.retrowave-showcase');
+        showcase.style.transform = 'perspective(1200px) rotateX(30deg) scale(0.92)';
+        showcase.style.filter = 'brightness(1.2) saturate(1.3)';
         
         setTimeout(() => {
             showcase.style.transform = 'perspective(1200px) rotateX(0deg) scale(1)';
-        }, 300);
+            showcase.style.filter = 'brightness(1) saturate(1)';
+        }, 400);
     }
 
-    initializeArcadeEffects() {
+    initializeRetrowaveEffects() {
         // Efecto de escaneo aleatorio
         setInterval(() => {
-            this.randomScanEffect();
-        }, 5000);
+            this.randomRetroScanEffect();
+        }, 6000);
 
         // Partículas flotantes dinámicas
-        this.createFloatingParticles();
+        this.createRetrowaveParticles();
 
         // Glitch ocasional en el título
         setInterval(() => {
-            this.titleGlitchEffect();
-        }, 15000);
+            this.titleRetroGlitchEffect();
+        }, 18000);
+
+        // Efecto de colores cambiantes en partículas
+        this.startColorCycling();
     }
 
-    randomScanEffect() {
-        const capsules = document.querySelectorAll('.gnome-capsule:not([style*="display: none"])');
+    randomRetroScanEffect() {
+        const capsules = document.querySelectorAll('.retro-capsule:not([style*="display: none"])');
         if (capsules.length > 0) {
             const randomCapsule = capsules[Math.floor(Math.random() * capsules.length)];
             const scanOverlay = randomCapsule.querySelector('.scan-overlay');
             if (scanOverlay) {
                 scanOverlay.style.animation = 'none';
                 setTimeout(() => {
-                    scanOverlay.style.animation = 'scanSweep 1s ease-out';
+                    scanOverlay.style.animation = 'retroScanSweep 1.5s ease-out';
                 }, 100);
             }
         }
     }
 
-    createFloatingParticles() {
+    createRetrowaveParticles() {
         const particles = document.querySelectorAll('.floating-particles .particle');
         particles.forEach((particle, index) => {
             setInterval(() => {
-                const colors = ['var(--neon-cyan)', 'var(--neon-pink)', 'var(--neon-green)', 'var(--neon-yellow)', 'var(--neon-purple)'];
+                const colors = [
+                    'var(--pastel-pink)', 
+                    'var(--pastel-cyan)', 
+                    'var(--pastel-purple)', 
+                    'var(--pastel-yellow)', 
+                    'var(--pastel-mint)',
+                    'var(--pastel-orange)',
+                    'var(--pastel-blue)'
+                ];
                 particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-            }, 3000 + index * 1000);
+            }, 4000 + index * 1200);
         });
     }
 
-    titleGlitchEffect() {
+    startColorCycling() {
+        // Efecto de ciclo de colores en los bordes de las cápsulas
+        setInterval(() => {
+            const capsules = document.querySelectorAll('.retro-capsule .capsule-frame');
+            capsules.forEach(capsule => {
+                capsule.style.filter = `hue-rotate(${Math.random() * 360}deg) brightness(1.1)`;
+                setTimeout(() => {
+                    capsule.style.filter = '';
+                }, 2000);
+            });
+        }, 10000);
+    }
+
+    titleRetroGlitchEffect() {
         const titleLayers = document.querySelectorAll('.title-layer-1, .title-layer-2, .title-layer-3');
-        titleLayers.forEach(layer => {
-            layer.style.animation = 'glitchEffect 0.5s ease-in-out';
+        titleLayers.forEach((layer, index) => {
             setTimeout(() => {
-                layer.style.animation = '';
-            }, 500);
+                layer.style.animation = 'retro80sGlitch 0.8s ease-in-out';
+                setTimeout(() => {
+                    layer.style.animation = '';
+                }, 800);
+            }, index * 200);
         });
     }
 
-    playHoverSound() {
-        // Simulación de sonido hover
-        console.log('🔊 Hover Sound: *beep*');
+    playRetroHoverSound() {
+        // Simulación de sonido hover retro
+        console.log('🔊 Retro Hover Sound: *synth-beep*');
         
         // Efecto visual de hover
-        event.currentTarget.style.filter = 'brightness(1.1)';
-        setTimeout(() => {
-            event.currentTarget.style.filter = '';
-        }, 200);
+        if (event && event.currentTarget) {
+            event.currentTarget.style.filter = 'brightness(1.2) saturate(1.3)';
+            setTimeout(() => {
+                event.currentTarget.style.filter = '';
+            }, 300);
+        }
     }
 
-    playClickSound() {
-        // Simulación de sonido click
-        console.log('🔊 Click Sound: *boop*');
+    playRetroClickSound() {
+        // Simulación de sonido click retro
+        console.log('🔊 Retro Click Sound: *synthwave-boop*');
     }
 
     handleKeyboard(e) {
@@ -389,7 +419,7 @@ class ArcadeGnomes {
                     <img src="${gnome.imagen_url}" alt="${gnome.nombre}" class="gnome-sprite-large" />
                 </div>
                 <div class="modal-gnome-info">
-                    <h3 class="pixel-font" style="color: var(--neon-cyan); font-size: 16px; margin-bottom: 20px;">
+                    <h3 class="retro-font" style="color: var(--bg-primary); font-size: 20px; margin-bottom: 25px; text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.3);">
                         ${gnome.nombre.toUpperCase()}
                     </h3>
                     
@@ -412,7 +442,7 @@ class ArcadeGnomes {
                         </div>
                         <div class="detail-item">
                             <span class="detail-label pixel-font">PRECIO:</span>
-                            <span class="detail-value" style="color: var(--coin-gold);">🪙 ${gnome.precio_en_oro} GOLD</span>
+                            <span class="detail-value" style="color: var(--retro-gold); font-weight: 900;">🪙 ${gnome.precio_en_oro} GOLD</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-label pixel-font">ESTADO:</span>
@@ -422,9 +452,9 @@ class ArcadeGnomes {
                         </div>
                     </div>
                     
-                    <div class="modal-actions" style="margin-top: 30px; text-align: center;">
-                        <button class="arcade-btn btn-purchase" 
-                                onclick="arcadeGnomes.purchaseGnome(${gnome.id})"
+                    <div class="modal-actions" style="margin-top: 35px; text-align: center;">
+                        <button class="retro-btn btn-purchase" 
+                                onclick="retrowaveGnomes.purchaseGnome(${gnome.id})"
                                 ${!gnome.disponible ? 'disabled' : ''}>
                             <span class="btn-icon">🛒</span>
                             <span class="btn-text pixel-font">${gnome.disponible ? 'COMPRAR AHORA' : 'AGOTADO'}</span>
@@ -445,10 +475,10 @@ class ArcadeGnomes {
         }
 
         // Simulación de compra
-        console.log(`🛒 Comprando duende: ${gnome.nombre} por ${gnome.precio_en_oro} oro`);
+        console.log(`🛒 Comprando duende retro: ${gnome.nombre} por ${gnome.precio_en_oro} oro`);
         
         // Efecto visual de compra
-        this.showPurchaseEffect(gnomeId);
+        this.showRetroPurchaseEffect(gnomeId);
         
         // Aquí iría la lógica real de agregar al carrito
         this.addToCart(gnome);
@@ -456,69 +486,85 @@ class ArcadeGnomes {
 
     addToCart(gnome) {
         // Simulación de agregar al carrito
-        console.log('Duende agregado al carrito:', gnome);
+        console.log('Duende retro agregado al carrito:', gnome);
         
         // Mostrar notificación
-        this.showNotification(`✅ ${gnome.nombre.toUpperCase()} AGREGADO AL CARRITO!`, 'success');
+        this.showRetroNotification(`✅ ${gnome.nombre.toUpperCase()} AGREGADO AL CARRITO!`, 'success');
         
         // Cerrar modal si está abierto
         this.closeModal();
     }
 
-    showPurchaseEffect(gnomeId) {
-        const capsule = document.querySelector(`.gnome-capsule:has([onclick*="${gnomeId}"])`);
+    showRetroPurchaseEffect(gnomeId) {
+        const capsule = document.querySelector(`.retro-capsule:has([onclick*="${gnomeId}"])`);
         if (capsule) {
-            capsule.style.animation = 'purchaseEffect 1s ease-out';
+            capsule.style.animation = 'retroPurchaseEffect 1.2s ease-out';
             
-            // Crear partículas de compra
-            this.createPurchaseParticles(capsule);
+            // Crear partículas de compra retro
+            this.createRetroPurchaseParticles(capsule);
         }
     }
 
-    createPurchaseParticles(element) {
+    createRetroPurchaseParticles(element) {
         const rect = element.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 12; i++) {
             const particle = document.createElement('div');
             particle.style.cssText = `
                 position: fixed;
-                width: 8px;
-                height: 8px;
-                background: var(--coin-gold);
+                width: 10px;
+                height: 10px;
+                background: var(--retro-gold);
                 border-radius: 50%;
                 left: ${centerX}px;
                 top: ${centerY}px;
                 pointer-events: none;
                 z-index: 1000;
-                box-shadow: 0 0 10px var(--coin-gold);
+                box-shadow: 0 0 15px var(--retro-gold);
+                border: 2px solid var(--pastel-yellow);
             `;
             
             document.body.appendChild(particle);
             
-            const angle = (i / 8) * Math.PI * 2;
-            const distance = 100;
+            const angle = (i / 12) * Math.PI * 2;
+            const distance = 120;
             const endX = centerX + Math.cos(angle) * distance;
             const endY = centerY + Math.sin(angle) * distance;
             
             particle.animate([
-                { transform: 'translate(0, 0) scale(1)', opacity: 1 },
-                { transform: `translate(${endX - centerX}px, ${endY - centerY}px) scale(0)`, opacity: 0 }
+                { 
+                    transform: 'translate(0, 0) scale(1) rotate(0deg)', 
+                    opacity: 1,
+                    filter: 'brightness(1)'
+                },
+                { 
+                    transform: `translate(${endX - centerX}px, ${endY - centerY}px) scale(0) rotate(360deg)`, 
+                    opacity: 0,
+                    filter: 'brightness(2)'
+                }
             ], {
-                duration: 1000,
-                easing: 'ease-out'
+                duration: 1200,
+                easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             }).onfinish = () => particle.remove();
         }
     }
 
     showSoldOut() {
-        this.showNotification('❌ ESTE DUENDE ESTÁ AGOTADO', 'error');
+        this.showRetroNotification('❌ ESTE DUENDE RETRO ESTÁ AGOTADO', 'error');
     }
 
-    showNotification(message, type = 'info') {
+    showRetroNotification(message, type = 'info') {
         const notification = document.createElement('div');
-        notification.className = `arcade-notification ${type}`;
+        notification.className = `retro-notification ${type}`;
+        
+        const colors = {
+            success: 'var(--pastel-green)',
+            error: '#dc2626',
+            info: 'var(--pastel-cyan)'
+        };
+        
         notification.innerHTML = `
             <div class="notification-content pixel-font">
                 ${message}
@@ -527,19 +573,21 @@ class ArcadeGnomes {
         
         notification.style.cssText = `
             position: fixed;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, rgba(0, 0, 0, 0.95), rgba(26, 26, 26, 0.95));
-            border: 3px solid var(--neon-${type === 'success' ? 'green' : type === 'error' ? 'red' : 'cyan'});
-            border-radius: 12px;
-            padding: 15px 20px;
-            color: var(--neon-${type === 'success' ? 'green' : type === 'error' ? 'red' : 'cyan'});
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+            top: 25px;
+            right: 25px;
+            background: linear-gradient(45deg, rgba(255, 159, 178, 0.95), rgba(196, 156, 232, 0.95));
+            border: 4px solid ${colors[type]};
+            border-radius: 15px;
+            padding: 20px 25px;
+            color: var(--bg-primary);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
             z-index: 2000;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            font-size: 10px;
-            max-width: 300px;
+            transform: translateX(110%);
+            transition: transform 0.4s ease;
+            font-size: 11px;
+            max-width: 350px;
+            backdrop-filter: blur(10px);
+            text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
         `;
         
         document.body.appendChild(notification);
@@ -551,9 +599,9 @@ class ArcadeGnomes {
         
         // Auto-remover
         setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => notification.remove(), 300);
-        }, 3000);
+            notification.style.transform = 'translateX(110%)';
+            setTimeout(() => notification.remove(), 400);
+        }, 3500);
     }
 
     showModal() {
@@ -569,79 +617,98 @@ class ArcadeGnomes {
     }
 }
 
-// Inicializar el sistema arcade
-const arcadeGnomes = new ArcadeGnomes();
+// Inicializar el sistema retrowave
+const retrowaveGnomes = new RetrowaveGnomes();
 
 // Funciones globales para compatibilidad
 function previewGnome(gnomeId) {
-    arcadeGnomes.previewGnome(gnomeId);
+    retrowaveGnomes.previewGnome(gnomeId);
 }
 
 function purchaseGnome(gnomeId) {
-    arcadeGnomes.purchaseGnome(gnomeId);
+    retrowaveGnomes.purchaseGnome(gnomeId);
 }
 
 function showSoldOut() {
-    arcadeGnomes.showSoldOut();
+    retrowaveGnomes.showSoldOut();
 }
 
 function closeModal() {
-    arcadeGnomes.closeModal();
+    retrowaveGnomes.closeModal();
 }
 
-// CSS adicional para efectos dinámicos
-const additionalStyles = `
+// CSS adicional para efectos dinámicos retrowave
+const retrowaveStyles = `
     .modal-gnome-detail {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        gap: 30px;
+        gap: 35px;
         align-items: start;
     }
     
     .gnome-sprite-large {
-        width: 150px;
-        height: 150px;
+        width: 170px;
+        height: 170px;
         object-fit: contain;
-        border: 3px solid var(--neon-cyan);
-        border-radius: 15px;
-        background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(26, 26, 26, 0.8));
-        padding: 20px;
-        filter: drop-shadow(0 0 20px var(--neon-cyan));
+        border: 4px solid var(--pastel-cyan);
+        border-radius: 20px;
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+        padding: 25px;
+        filter: drop-shadow(0 0 25px var(--pastel-cyan)) contrast(1.1) saturate(1.2);
+        backdrop-filter: blur(5px);
     }
     
     .detail-grid {
         display: grid;
-        gap: 15px;
+        gap: 18px;
     }
     
     .detail-item {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px;
-        background: rgba(0, 0, 0, 0.6);
-        border-radius: 8px;
-        border: 2px solid rgba(0, 245, 255, 0.3);
+        padding: 12px 15px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
     }
     
     .detail-label {
-        color: var(--neon-yellow);
         font-size: 10px;
+        font-weight: 900;
     }
     
     .detail-value {
-        color: #fff;
-        font-size: 10px;
+        color: var(--bg-primary);
+        font-size: 11px;
         text-align: right;
+        font-weight: 900;
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
     }
     
-    .text-green { color: var(--neon-green) !important; }
-    .text-red { color: var(--arcade-red) !important; }
+    .text-green { 
+        color: var(--pastel-green) !important; 
+        text-shadow: 0 0 5px var(--pastel-green);
+    }
+    .text-red { 
+        color: #dc2626 !important; 
+        text-shadow: 0 0 5px #dc2626;
+    }
     
-    @keyframes purchaseEffect {
-        0% { transform: perspective(1200px) rotateX(15deg) rotateY(-15deg) scale(1); }
-        50% { transform: perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1.1); }
-        100% { transform: perspective(1200px) rotateX(15deg) rotateY(-15deg) scale(1); }
+    @keyframes retroPurchaseEffect {
+        0% { 
+            transform: perspective(1200px) rotateX(12deg) rotateY(-12deg) scale(1); 
+            filter: brightness(1) saturate(1);
+        }
+        50% { 
+            transform: perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1.15); 
+            filter: brightness(1.3) saturate(1.5);
+        }
+        100% { 
+            transform: perspective(1200px) rotateX(12deg) rotateY(-12deg) scale(1); 
+            filter: brightness(1) saturate(1);
+        }
     }
     
     @media (max-width: 768px) {
@@ -652,36 +719,43 @@ const additionalStyles = `
         
         .detail-item {
             flex-direction: column;
-            gap: 5px;
+            gap: 8px;
             text-align: center;
+        }
+        
+        .gnome-sprite-large {
+            width: 140px;
+            height: 140px;
         }
     }
 `;
 
 // Insertar estilos adicionales
 const styleSheet = document.createElement('style');
-styleSheet.textContent = additionalStyles;
+styleSheet.textContent = retrowaveStyles;
 document.head.appendChild(styleSheet);
 
-// Efecto de carga inicial
+// Efecto de carga inicial retrowave
 document.addEventListener('DOMContentLoaded', () => {
-    const capsules = document.querySelectorAll('.gnome-capsule');
+    const capsules = document.querySelectorAll('.retro-capsule');
     capsules.forEach((capsule, index) => {
         capsule.style.opacity = '0';
-        capsule.style.transform = 'perspective(1200px) rotateX(90deg) rotateY(45deg) translateY(100px)';
+        capsule.style.transform = 'perspective(1200px) rotateX(90deg) rotateY(60deg) translateY(200px) scale(0.3)';
+        capsule.style.filter = 'brightness(0) saturate(0)';
         
         setTimeout(() => {
-            capsule.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            capsule.style.transition = 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             capsule.style.opacity = '1';
-            capsule.style.transform = 'perspective(1200px) rotateX(15deg) rotateY(-15deg)';
-        }, index * 100);
+            capsule.style.transform = 'perspective(1200px) rotateX(12deg) rotateY(-12deg) scale(1)';
+            capsule.style.filter = 'brightness(1) saturate(1)';
+        }, index * 150);
     });
     
-    // Mensaje de bienvenida
+    // Mensaje de bienvenida retrowave
     setTimeout(() => {
-        arcadeGnomes.showNotification('🎮 BIENVENIDO AL PIXEL GNOMES ARCADE! 🎮', 'success');
-    }, 1000);
+        retrowaveGnomes.showRetroNotification('� BIENVENIDO A RETRO GNOMES 80s! �', 'success');
+    }, 1200);
 });
 
-console.log('🎮 PIXEL GNOMES ARCADE SYSTEM INITIALIZED 🎮');
+console.log('� RETROWAVE 80s GNOMES SYSTEM INITIALIZED �');
 </script>

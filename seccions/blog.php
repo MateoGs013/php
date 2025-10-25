@@ -2,7 +2,7 @@
 	require_once 'clases/Blogs.php';
 	$blogs = Blogs::cargarBlogsDesdeJSON();
 ?>
-<section class="mt-8">
+<section class="mt-8 section-retrowave">
 	<h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wide text-black mb-6">Crónicas del Bosque</h2>
 	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 		<?php foreach ($blogs as $b): ?>

@@ -33,12 +33,12 @@ if (isset($_GET['elemento']) && !empty($_GET['elemento'])) {
 }
 ?>
 
-<div class="productos-container retro-bg retro-grid">
+    <div class="productos-container retro-bg retro-grid">
     <div class="productos-content">
         <!-- Título arcade principal -->
         <div class="text-center mb-12">
-            <h1 class="arcade-title pixel-font pixel-2xl text-glow inline-block">
-                CATÁLOGO ARCADE
+            <h1 class="retro-title pixel-font pixel-2xl text-glow inline-block">
+                CATÁLOGO RETROWAVE
             </h1>
             <div class="pixel-font pixel-sm text-neon-cyan text-center mt-4">
                 ◄◄◄ EXPLORA TODA NUESTRA COLECCIÓN ►►►
@@ -47,7 +47,7 @@ if (isset($_GET['elemento']) && !empty($_GET['elemento'])) {
 
         <!-- Panel de Filtros Arcade -->
         <div class="mb-8">
-            <div class="form-arcade max-w-6xl mx-auto">
+                <div class="form-retrowave max-w-6xl mx-auto">
                 <h2 class="pixel-font pixel-md text-neon-green text-glow mb-6 text-center">
                     🎛️ PANEL DE CONTROL
                 </h2>
@@ -105,10 +105,10 @@ if (isset($_GET['elemento']) && !empty($_GET['elemento'])) {
                     
                     <!-- Botones de acción -->
                     <div class="flex gap-2">
-                        <button type="submit" class="btn-arc primary pixel-font pixel-xs flex-1">
+                        <button type="submit" class="retro-btn primary pixel-font pixel-xs flex-1">
                             🔍 FILTRAR
                         </button>
-                        <a href="?seccion=catalogo" class="btn-arc secondary pixel-font pixel-xs px-4">
+                        <a href="?seccion=catalogo" class="retro-btn secondary pixel-font pixel-xs px-4">
                             🔄 RESET
                         </a>
                     </div>
@@ -116,8 +116,8 @@ if (isset($_GET['elemento']) && !empty($_GET['elemento'])) {
                 
                 <!-- Información de filtros activos -->
                 <?php if ($filtroActivo): ?>
-                    <div class="mt-4 text-center">
-                        <div class="alert-arcade alert-success pixel-font pixel-xs inline-block">
+                    <div class="mb-4 text-center">
+                        <div class="alert-retrowave alert-success pixel-font pixel-xs inline-block">
                             🎯 FILTROS ACTIVOS: <?= count($duendesFiltrados) ?> DUENDES ENCONTRADOS
                         </div>
                     </div>
@@ -127,19 +127,19 @@ if (isset($_GET['elemento']) && !empty($_GET['elemento'])) {
 
         <!-- Estadísticas rápidas -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
-            <div class="form-arcade text-center py-4">
+            <div class="form-retrowave text-center py-4">
                 <div class="pixel-font pixel-lg text-neon-pink text-glow"><?= count($duendesFiltrados) ?></div>
                 <div class="pixel-font pixel-xs text-neon-cyan">DUENDES</div>
             </div>
-            <div class="form-arcade text-center py-4">
+            <div class="form-retrowave text-center py-4">
                 <div class="pixel-font pixel-lg text-neon-green text-glow"><?= count($rarezas) ?></div>
                 <div class="pixel-font pixel-xs text-neon-yellow">RAREZAS</div>
             </div>
-            <div class="form-arcade text-center py-4">
+            <div class="form-retrowave text-center py-4">
                 <div class="pixel-font pixel-lg text-neon-yellow text-glow"><?= count($tipos) ?></div>
                 <div class="pixel-font pixel-xs text-neon-pink">TIPOS</div>
             </div>
-            <div class="form-arcade text-center py-4">
+            <div class="form-retrowave text-center py-4">
                 <div class="pixel-font pixel-lg text-neon-cyan text-glow"><?= count($elementos) ?></div>
                 <div class="pixel-font pixel-xs text-neon-green">ELEMENTOS</div>
             </div>
@@ -205,12 +205,12 @@ if (isset($_GET['elemento']) && !empty($_GET['elemento'])) {
 
                             <!-- Botones de acción -->
                             <div class="flex gap-2 justify-center">
-                                <button class="btn-arc secondary pixel-font pixel-xs" 
+                                <button class="retro-btn secondary pixel-font pixel-xs" 
                                         onclick="agregarAlCarrito(<?= $d->getId() ?>)">
                                     + AGREGAR
                                 </button>
                                 <a href="?seccion=detalle_producto&id=<?= $d->getId() ?>" 
-                                   class="btn-arc primary pixel-font pixel-xs">
+                                   class="retro-btn primary pixel-font pixel-xs">
                                     👁️ VER
                                 </a>
                             </div>
@@ -230,7 +230,7 @@ if (isset($_GET['elemento']) && !empty($_GET['elemento'])) {
         <?php else: ?>
             <!-- Mensaje cuando no hay resultados -->
             <div class="text-center">
-                <div class="form-arcade max-w-md mx-auto py-12">
+                <div class="form-retrowave max-w-md mx-auto py-12">
                     <div class="text-6xl mb-4">🔍</div>
                     <h3 class="pixel-font pixel-md text-neon-cyan text-glow mb-4">
                         NO ENCONTRADO
@@ -238,7 +238,7 @@ if (isset($_GET['elemento']) && !empty($_GET['elemento'])) {
                     <p class="pixel-font pixel-sm text-white mb-6">
                         NO HAY DUENDES QUE COINCIDAN CON TUS FILTROS
                     </p>
-                    <a href="?seccion=catalogo" class="btn-arc primary pixel-font pixel-sm">
+                    <a href="?seccion=catalogo" class="retro-btn primary pixel-font pixel-sm">
                         🔄 VER TODOS
                     </a>
                 </div>

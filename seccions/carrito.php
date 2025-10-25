@@ -44,8 +44,8 @@
 		
 		<!-- Título Arcade -->
 		<div class="text-center mb-12">
-			<h1 class="arcade-title pixel-font pixel-2xl text-glow inline-block">
-				🛒 CARRITO ARCADE
+			<h1 class="retro-title pixel-font pixel-2xl text-glow inline-block">
+				🛒 CARRITO RETROWAVE
 			</h1>
 			<div class="pixel-font pixel-sm text-neon-cyan text-center mt-4">
 				◄◄◄ TUS DUENDES SELECCIONADOS ►►►
@@ -56,7 +56,7 @@
 			
 			<!-- Lista de productos en el carrito -->
 			<div class="lg:col-span-2">
-				<div class="form-arcade">
+				<div class="form-retrowave">
 					<div class="flex items-center justify-between mb-6">
 						<h2 class="pixel-font pixel-lg text-neon-green">
 							📦 PRODUCTOS EN CARRITO
@@ -64,7 +64,7 @@
 						<?php if (!empty($cart)): ?>
 							<form method="post" action="?seccion=carrito" class="inline">
 								<input type="hidden" name="accion" value="vaciar"/>
-								<button type="submit" class="btn-arc secondary pixel-font pixel-xs" 
+								<button type="submit" class="retro-btn secondary pixel-font pixel-xs" 
 										onclick="return confirm('¿Estás seguro de vaciar el carrito?')">
 									🗑️ VACIAR TODO
 								</button>
@@ -81,7 +81,7 @@
 								$total += $line;
 								$totalItems += $qty; ?>
 								
-								<div class="table-arcade overflow-hidden">
+								<div class="table-retrowave overflow-hidden">
 									<div class="p-4">
 										<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
 											
@@ -132,7 +132,7 @@
 												<form method="post" action="?seccion=carrito" class="inline">
 													<input type="hidden" name="id" value="<?= intval($id) ?>"/>
 													<input type="hidden" name="accion" value="eliminar"/>
-													<button type="submit" class="btn-arc secondary pixel-font pixel-xs">
+													<button type="submit" class="retro-btn secondary pixel-font pixel-xs">
 														❌ ELIMINAR
 													</button>
 												</form>
@@ -145,7 +145,7 @@
 						
 						<!-- Continuar comprando -->
 						<div class="text-center mt-8">
-							<a href="?seccion=catalogo" class="btn-arc secondary pixel-font pixel-md">
+							<a href="?seccion=catalogo" class="retro-btn secondary pixel-font pixel-md">
 								🔍 SEGUIR COMPRANDO
 							</a>
 						</div>
@@ -160,7 +160,7 @@
 							<p class="pixel-font pixel-md text-white mb-8">
 								¡NO HAS SELECCIONADO NINGÚN DUENDE AÚN!
 							</p>
-							<a href="?seccion=catalogo" class="btn-arc primary pixel-font pixel-md">
+							<a href="?seccion=catalogo" class="retro-btn primary pixel-font pixel-md">
 								🎮 EXPLORAR DUENDES
 							</a>
 						</div>
@@ -170,7 +170,7 @@
 
 			<!-- Resumen del pedido -->
 			<div class="lg:col-span-1">
-				<div class="form-arcade sticky top-24">
+				<div class="form-retrowave sticky top-24">
 					<h2 class="pixel-font pixel-lg text-neon-green text-glow mb-6 text-center">
 						💰 RESUMEN ARCADE
 					</h2>
@@ -217,7 +217,7 @@
 							<input type="text" 
 								   placeholder="CÓDIGO..." 
 								   class="input-arcade flex-1"/>
-							<button class="btn-arc secondary pixel-font pixel-xs">
+							<button class="retro-btn secondary pixel-font pixel-xs">
 								✓
 							</button>
 						</div>
@@ -225,7 +225,7 @@
 					
 					<!-- Botón de checkout -->
 					<?php if (!empty($cart)): ?>
-						<a href="?seccion=checkout" class="btn-arc primary pixel-font pixel-md w-full text-center block py-4 mb-4">
+							<a href="?seccion=checkout" class="retro-btn primary pixel-font pixel-md w-full text-center block py-4 mb-4">
 							🚀 FINALIZAR COMPRA
 						</a>
 						
@@ -239,7 +239,7 @@
 							</div>
 						</div>
 					<?php else: ?>
-						<div class="alert-arcade alert-warning text-center">
+						<div class="alert-retrowave alert-warning text-center">
 							<div class="pixel-font pixel-sm">
 								AGREGA DUENDES PARA CONTINUAR
 							</div>

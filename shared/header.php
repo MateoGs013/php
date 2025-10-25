@@ -2,7 +2,7 @@
     require_once "clases/Secciones.php";
     $secciones = Secciones::secciones_menu();   
 ?>
-<header class="nav-arcade sticky top-0 z-50">
+<header class="nav-retrowave sticky top-0 z-50">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-20 items-center justify-between relative z-10">
             <!-- Brand Arcade -->
@@ -16,11 +16,11 @@
                     <div class="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 opacity-20 blur-md group-hover:opacity-40 transition-opacity duration-300"></div>
                 </div>
                 <div class="leading-tight">
-                    <div class="nav-brand pixel-font pixel-lg text-glow">
-                        MYSTIC ARCADE
+                    <div class="nav-brand retro-font pixel-lg text-glow">
+                        PIXEL GNOMES
                     </div>
-                    <div class="pixel-font pixel-xs text-neon-yellow">
-                        ◄ DUENDES & MAGIA ►
+                    <div class="pixel-font pixel-xs text-retro-gradient">
+                        ◄ RETROWAVE 80s ►
                     </div>
                 </div>
             </a>
@@ -35,7 +35,7 @@
                 <?php endforeach; ?>
                 
                 <!-- Special Cart Button -->
-                <a href="?seccion=carrito" class="btn-arc primary pixel-font pixel-xs ml-4 relative">
+                <a href="?seccion=carrito" class="retro-btn btn-purchase pixel-font pixel-xs ml-4 relative">
                     🛒 CARRITO
                     <span class="absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold border-2 border-black shadow-[2px_2px_0_#000]">
                         3
@@ -44,8 +44,8 @@
             </nav>
 
             <!-- Mobile menu button -->
-            <button type="button" 
-                    class="md:hidden btn-arc secondary pixel-font pixel-xs" 
+        <button type="button" 
+            class="md:hidden retro-btn btn-preview pixel-font pixel-xs" 
                     aria-controls="mobile-menu" 
                     aria-expanded="false" 
                     onclick="toggleMobileMenu()">
@@ -55,14 +55,14 @@
 
         <!-- Mobile Navigation -->
         <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 bg-black bg-opacity-90 border-3 border-neon-cyan rounded-lg mt-2 backdrop-blur">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-gradient-to-b from-transparent to-black/40 rounded-lg mt-2 backdrop-blur">
                 <?php foreach ($secciones as $seccion): ?>
                     <a href="?seccion=<?= $seccion; ?>"
-                       class="nav-link pixel-font pixel-xs block w-full text-center py-3 border-b border-neon-cyan border-opacity-30">
+                       class="nav-link pixel-font pixel-xs block w-full text-center py-3 border-b border-transparent hover:border-pink-300">
                         <?= strtoupper($seccion); ?>
                     </a>
                 <?php endforeach; ?>
-                <a href="?seccion=carrito" class="btn-arc primary pixel-font pixel-xs w-full mt-4 text-center block">
+                <a href="?seccion=carrito" class="retro-btn btn-purchase pixel-font pixel-xs w-full mt-4 text-center block">
                     🛒 CARRITO (3)
                 </a>
             </div>

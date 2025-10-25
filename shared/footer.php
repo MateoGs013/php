@@ -1,4 +1,4 @@
-<footer class="footer-arcade relative overflow-hidden">
+<footer class="retrowave-footer relative overflow-hidden">
 	<!-- Animated background grid -->
 	<div class="absolute inset-0 opacity-20">
 		<div class="h-full w-full" style="background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(57,255,20,0.1) 10px, rgba(57,255,20,0.1) 20px);"></div>
@@ -10,11 +10,11 @@
 			<!-- Logo Section -->
 			<div class="md:col-span-1">
 				<div class="flex items-center gap-3 mb-4">
-					<div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 border-3 border-black shadow-[4px_4px_0_#000]">
+					<div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-r from-purple-300 to-pink-300 border-2 border-white shadow-lg">
 						<div class="pixel-font text-white">🧙</div>
 					</div>
-					<div class="pixel-font pixel-md text-neon-green text-glow">
-						MYSTIC ARCADE
+					<div class="pixel-font pixel-md retro-font text-retro-gradient">
+						PIXEL GNOMES
 					</div>
 				</div>
 				<p class="pixel-font pixel-xs text-white mb-4">
@@ -27,7 +27,7 @@
 
 			<!-- Navigation Links -->
 			<div class="footer-section">
-				<h4 class="pixel-font pixel-sm text-neon-green mb-4">NAVEGACIÓN</h4>
+				<h4 class="pixel-font pixel-sm text-retro-gradient mb-4">NAVEGACIÓN</h4>
 				<ul class="space-y-2">
 					<li><a href="?seccion=inicio" class="footer-link pixel-font pixel-xs">INICIO</a></li>
 					<li><a href="?seccion=productos" class="footer-link pixel-font pixel-xs">PRODUCTOS</a></li>
@@ -40,7 +40,7 @@
 
 			<!-- Services -->
 			<div class="footer-section">
-				<h4 class="pixel-font pixel-sm text-neon-green mb-4">SERVICIOS</h4>
+				<h4 class="pixel-font pixel-sm text-retro-gradient mb-4">SERVICIOS</h4>
 				<ul class="space-y-2">
 					<li><a href="?seccion=carrito" class="footer-link pixel-font pixel-xs">CARRITO</a></li>
 					<li><a href="?seccion=cuenta" class="footer-link pixel-font pixel-xs">MI CUENTA</a></li>
@@ -53,31 +53,31 @@
 
 			<!-- Social & Contact -->
 			<div class="footer-section">
-				<h4 class="pixel-font pixel-sm text-neon-green mb-4">CONECTA</h4>
+				<h4 class="pixel-font pixel-sm text-retro-gradient mb-4">CONECTA</h4>
 				<div class="space-y-3 mb-6">
-					<a href="#" class="btn-arc secondary pixel-font pixel-xs block text-center">
+					<a href="#" class="retro-btn secondary pixel-font pixel-xs block text-center">
 						📸 INSTAGRAM
 					</a>
-					<a href="#" class="btn-arc secondary pixel-font pixel-xs block text-center">
+					<a href="#" class="retro-btn secondary pixel-font pixel-xs block text-center">
 						🐦 TWITTER
 					</a>
-					<a href="#" class="btn-arc secondary pixel-font pixel-xs block text-center">
+					<a href="#" class="retro-btn secondary pixel-font pixel-xs block text-center">
 						📺 YOUTUBE
 					</a>
 				</div>
-				<div class="pixel-font pixel-xs text-neon-yellow">
-					<div class="mb-2">📧 INFO@MYSTICARE.COM</div>
-					<div class="mb-2">📱 +54 11 MAGIC-00</div>
-					<div>🏰 DUBLIN, IRELAND</div>
+				<div class="pixel-font pixel-xs text-retro-gradient">
+					<div class="mb-2">📧 INFO@PIXELGNOMES.COM</div>
+					<div class="mb-2">📱 +54 11 80S-GNOM</div>
+					<div>�️ MIAMI, 1985</div>
 				</div>
 			</div>
 		</div>
 
 		<!-- Bottom Section -->
-		<div class="border-t-2 border-neon-green pt-6">
+		<div class="border-t-2 border-pastel-pink pt-6">
 			<div class="flex flex-col md:flex-row items-center justify-between gap-4">
 				<div class="pixel-font pixel-xs text-neon-cyan text-center md:text-left">
-					© 2025 MYSTIC ARCADE SHOP - POWERED BY PHP & RETRO MAGIC
+					© 2025 PIXEL GNOMES - RETROWAVE 80s
 				</div>
 				<div class="flex items-center gap-2">
 					<span class="chip pixel-font pixel-xs">SECURE</span>

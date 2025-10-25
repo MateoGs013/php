@@ -74,7 +74,7 @@
             pointer-events: none;
         }
         
-        .arcade-loader {
+        .retro-loader {
             width: 60px;
             height: 60px;
             border: 4px solid #00f5ff;
@@ -108,9 +108,9 @@
     
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <div class="arcade-loader"></div>
+        <div class="retro-loader"></div>
         <div class="loading-text">CARGANDO MAGIA...</div>
-        <div class="pixel-font text-neon-cyan text-xs mt-4">◄◄◄ INICIALIZANDO ARCADE ►►►</div>
+        <div class="pixel-font text-neon-cyan text-xs mt-4">◄◄◄ INICIALIZANDO RETROWAVE ►►►</div>
     </div>
     
     <!-- Contenido Principal -->
@@ -139,7 +139,7 @@
         // Sistema de carga y efectos
         document.addEventListener('DOMContentLoaded', function() {
             // Detectar si hay errores PHP que impiden la carga
-            const hasContent = document.querySelector('main .productos-container, main .hero-arcade, main .form-arcade, main .section-arcade');
+            const hasContent = document.querySelector('main .productos-container, main .hero-retrowave, main .form-retrowave, main .section-retrowave');
             
             // Si no hay contenido principal, mostrar error y reducir tiempo de carga
             const loadingTime = hasContent ? 1500 : 800;
@@ -243,17 +243,16 @@
         
         function initializeArcadeSounds() {
             // Simulación de sonidos arcade
-            const buttons = document.querySelectorAll('.btn-arc');
+            const buttons = document.querySelectorAll('.retro-btn');
             
-            buttons.forEach(button => {
+            // Activar sonidos en botones retrowave
+            const retroButtons = document.querySelectorAll('.retro-btn');
+            retroButtons.forEach(button => {
                 button.addEventListener('mouseenter', function() {
-                    console.log('♪ Hover beep');
-                    // Aquí se podría agregar Web Audio API
+                    console.log('♪ Hover beep (retrowave)');
                 });
-                
                 button.addEventListener('click', function() {
-                    console.log('♪ Click sound');
-                    // Aquí se podría agregar Web Audio API
+                    console.log('♪ Click sound (retrowave)');
                 });
             });
         }
