@@ -1,0 +1,62 @@
+[
+  {
+    "vinculo": "inicio",
+    "titulo": "Inicio",
+    "descripcion": "Sección principal con bienvenida, llamado a la acción y elementos mágicos animados.",
+    "menu": true
+  },
+  {
+    "vinculo": "catalogo",
+    "titulo": "Catálogo de Duendes",
+    "descripcion": "Galería completa de duendes con filtros por rareza, afinidad, suerte o propósito.",
+    "menu": true
+  },
+  {
+    "vinculo": "detalle_producto",
+    "titulo": "Ficha del Duende",
+    "descripcion": "Vista individual de cada duende con su descripción, atributos, historia y accesorios.",
+    "menu": false
+  },
+  {
+    "vinculo": "nosotros",
+    "titulo": "Sobre la Tienda",
+    "descripcion": "Historia, misión y el mito detrás de los duendes que vendemos.",
+    "menu": true
+  },
+  {
+    "vinculo": "blog",
+    "titulo": "Crónicas del Bosque",
+    "descripcion": "Artículos sobre mitología celta, rituales de suerte, leyendas y cuvinculoado de duendes.",
+    "menu": true
+  },
+  {
+    "vinculo": "detalle_blog",
+    "titulo": "Artículo del Blog",
+    "descripcion": "Vista individual de cada artículo del blog con su contenido, imágenes y comentarios.",
+    "menu": false
+  },
+  {
+    "vinculo": "contacto",
+    "titulo": "Contacto y Bendiciones",
+    "descripcion": "Formulario para consultas, colaboraciones o adopciones mágicas personalizadas.",
+    "menu": true
+  },
+  {
+    "vinculo": "carrito",
+    "titulo": "Carrito Mágico",
+    "descripcion": "Resumen de los duendes seleccionados, con cálculo automático en monedas de oro.",
+    "menu": false
+  },
+  {
+    "vinculo": "checkout",
+    "titulo": "Finalizar Compra",
+    "descripcion": "Página de confirmación donde se elige el método de envío y pago.",
+    "menu": false
+  },
+  {
+    "vinculo": "cuenta",
+    "titulo": "Mi Cuenta",
+    "descripcion": "Zona del usuario con historial de compras, deseos y configuraciones.",
+    "menu": false
+  }
+]
