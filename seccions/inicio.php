@@ -4,7 +4,7 @@
 	
 	// Cargar algunos duendes destacados para mostrar
 	require_once 'clases/Duendes.php';
-	$duendes = Duendes::cargarDuendesDesdeJSON();
+	$duendes = Duendes::todosDuendes();
 	$duendesDestacados = array_slice($duendes, 0, 3); // Primeros 3 duendes
 ?>
 

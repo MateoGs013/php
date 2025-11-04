@@ -1,6 +1,6 @@
 <?php
 	require_once 'clases/Duendes.php';
-	$duendes = Duendes::cargarDuendesDesdeJSON();
+	$duendes = Duendes::todosDuendes();
 	$id = isset($_GET['id']) ? intval($_GET['id']) : null;
 	$duende = null;
 	foreach ($duendes as $d) {

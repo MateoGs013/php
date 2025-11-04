@@ -1,6 +1,6 @@
 <?php
 require_once 'clases/Duendes.php';
-$duendes = Duendes::cargarDuendesDesdeJSON();
+$duendes = Duendes::todosDuendes();
 
 // Filtros disponibles
 $rarezas = array_unique(array_map(function($d) { return $d->getRareza(); }, $duendes));

@@ -1,7 +1,7 @@
 <?php
 	if (session_status() === PHP_SESSION_NONE) { session_start(); }
 	require_once 'clases/Duendes.php';
-	$duendes = Duendes::cargarDuendesDesdeJSON();
+	$duendes = Duendes::todosDuendes();
 
 	// Index duendes by id for quick lookup
 	$byId = [];
