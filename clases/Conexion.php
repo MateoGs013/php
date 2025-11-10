@@ -25,7 +25,7 @@ class Conexion
             echo '<h2 style="color:#ff006e;">⚠️ ERROR DE CONEXIÓN A BD</h2>';
             echo '<p>No se pudo conectar a MySQL. Verifica:</p>';
             echo '<ul><li>XAMPP MySQL esté corriendo</li>';
-            echo '<li>Base de datos "tienda_duendes" exista</li>';
+            echo '<li>Base de datos ' . self::DB_NAME . ' exista</li>';
             echo '<li>Usuario: root, Password: vacío</li></ul>';
             echo '<p style="font-size:11px;color:#666;margin-top:20px;">Error: ' . htmlspecialchars($e->getMessage()) . '</p>';
             echo '</div>';
@@ -34,10 +34,9 @@ class Conexion
         }
     }
 
-    public function getConexion():PDO
+    public function getConexion():?PDO
     {
         return $this->db;
-
     }
 
 }

@@ -4,9 +4,10 @@
 	$id = isset($_GET['id']) ? intval($_GET['id']) : null;
 	$duende = null;
 	foreach ($duendes as $d) {
-		if ($d->getId() === $id) { $duende = $d; break; }
+		// Convertir id del objeto a entero antes de comparar. PDO suele devolver columnas como strings,
+		// así que la comparación estricta (===) puede fallar aunque los valores sean iguales.
+		if ($d->getId() == $id) { $duende = $d; break; }
 	}
-	
 	// Duendes relacionados (misma rareza o tipo)
 	$duendesRelacionados = [];
 	if ($duende) {
@@ -16,6 +17,7 @@
 		});
 		$duendesRelacionados = array_slice($duendesRelacionados, 0, 3);
 	}
+	
 ?>
 
 <div class="page-container retro-bg retro-grid">

@@ -1,0 +1,3 @@
+<?php
+// Crear nuevo blog
+?>

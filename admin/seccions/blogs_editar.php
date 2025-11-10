@@ -1,0 +1,3 @@
+<?php
+// Editar blog existente
+?>

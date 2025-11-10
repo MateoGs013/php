@@ -1,0 +1,3 @@
+<?php
+// Reportes y estadísticas
+?>
