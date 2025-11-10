@@ -1,7 +1,7 @@
 <?php
 	if (session_status() === PHP_SESSION_NONE) { session_start(); }
 	require_once 'clases/Duendes.php';
-	$duendes = Duendes::cargarDuendesDesdeJSON();
+	$duendes = Duendes::todosDuendes();
 	$byId = [];
 	foreach ($duendes as $d) { $byId[$d->getId()] = $d; }
 	$cart = $_SESSION['cart'] ?? [];

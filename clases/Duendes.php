@@ -23,7 +23,7 @@ class Duendes {
     private $imagen_url;
     private $descripcion;
 
-    public static function cargarDuendesDesdeJSON() {
+    /* public static function todosDuendes() {
         $jsonData = file_get_contents('data/duendes.json');
         $dataArray = json_decode($jsonData); // stdClass array
         $duendes = [];
@@ -54,8 +54,55 @@ class Duendes {
             $duendes[] = $duende;
         }
         return $duendes;
-    }
+    } */
 
+    public static function todosDuendes(): array{
+        require_once 'clases/Conexion.php';
+        try {
+            $conexion = new Conexion();
+            $db = $conexion->getConexion();
+            
+            if ($db === null) {
+                return []; // Retornar array vacío si no hay conexión
+            }
+
+            // Usar alias y JOINs para que coincidan con las propiedades de la clase
+            $stmt = $db->query("
+                SELECT 
+                    d.id_duende as id,
+                    d.nombre,
+                    d.tipo,
+                    d.color_principal,
+                    d.altura_cm,
+                    d.personalidad,
+                    r.nombre as rareza,
+                    d.precio_en_oro,
+                    d.efecto_magico as efecto_mágico,
+                    e.nombre as afinidad_elemental,
+                    d.nivel_maldad as nivel_de_maldad,
+                    d.nivel_suerte as nivel_de_suerte,
+                    d.origen_mitologico as origen_mitológico,
+                    '' as accesorios,
+                    m.nombre as material_principal,
+                    d.disponible,
+                    d.fecha_creacion as fecha_creación,
+                    d.popularidad,
+                    d.recomendado_para,
+                    d.advertencias,
+                    d.imagen_url,
+                    d.descripcion
+                FROM duendes d
+                LEFT JOIN rareza r ON d.id_rareza = r.id_rareza
+                LEFT JOIN elementos e ON d.id_elemento = e.id_elemento
+                LEFT JOIN materiales m ON d.id_material = m.id_material
+            ");
+            $stmt->setFetchMode(PDO::FETCH_CLASS, Duendes::class);
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo '<script>console.error("Error al cargar duendes: ' . addslashes($e->getMessage()) . '");</script>';
+            return [];
+        }
+    }
     // Métodos para acceder a los atributos
     public function getId() {
         return $this->id;

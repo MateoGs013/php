@@ -113,6 +113,17 @@
         <div class="pixel-font text-neon-cyan text-xs mt-4">◄◄◄ INICIALIZANDO ARCADE ►►►</div>
     </div>
     
+    <!-- Script inline para ocultar loading inmediatamente -->
+    <script>
+        // Ocultar loading después de 100ms (permite que el CSS se cargue)
+        setTimeout(function() {
+            var loading = document.getElementById('loadingScreen');
+            var wrapper = document.querySelector('.page-wrapper');
+            if (loading) loading.style.display = 'none';
+            if (wrapper) wrapper.style.opacity = '1';
+        }, 100);
+    </script>
+    
     <!-- Contenido Principal -->
     <div class="page-wrapper" style="opacity: 0; transition: opacity 0.5s ease-in;">
         
@@ -136,52 +147,10 @@
     
     <!-- Scripts -->
     <script>
-        // Sistema de carga y efectos
-        document.addEventListener('DOMContentLoaded', function() {
-            // Detectar si hay errores PHP que impiden la carga
-            const hasContent = document.querySelector('main .productos-container, main .hero-arcade, main .form-arcade, main .section-arcade');
-            
-            // Si no hay contenido principal, mostrar error y reducir tiempo de carga
-            const loadingTime = hasContent ? 1500 : 800;
-            
-            // Simular tiempo de carga
-            setTimeout(function() {
-                const loadingScreen = document.getElementById('loadingScreen');
-                const pageWrapper = document.querySelector('.page-wrapper');
-                
-                // Ocultar loading
-                if (loadingScreen) {
-                    loadingScreen.classList.add('hidden');
-                }
-                
-                // Mostrar contenido
-                if (pageWrapper) {
-                    pageWrapper.style.opacity = '1';
-                }
-                
-                // Inicializar efectos solo si el contenido se cargó correctamente
-                if (hasContent) {
-                    initializeEffects();
-                } else {
-                    console.warn('Contenido no cargado completamente - Efectos limitados');
-                }
-                
-            }, loadingTime);
+        // Inicialización simplificada
+        window.addEventListener('load', function() {
+            initializeEffects();
         });
-        
-        // Fallback de seguridad - forzar mostrar contenido después de 3 segundos
-        setTimeout(function() {
-            const loadingScreen = document.getElementById('loadingScreen');
-            const pageWrapper = document.querySelector('.page-wrapper');
-            
-            if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
-                console.log('Fallback: Forzando carga de página');
-                loadingScreen.classList.add('hidden');
-                if (pageWrapper) {
-                    pageWrapper.style.opacity = '1';
-                }
-            }
-        }, 3000);
         
         function initializeEffects() {
             // Crear partículas de fondo
